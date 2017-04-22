@@ -10,7 +10,7 @@ export function initialize(app) {
     let loc = {
       lat: pt.latitude,
       lng: pt.longitude
-    }
+    };
 
     // Add our new object to the app by using 'app.register('key', obj, {config})'
     // We set "instantiate:false" to prevent Ember from trying to instantiate this object

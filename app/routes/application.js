@@ -31,6 +31,6 @@ export default Route.extend(ApplicationRouteMixin, {
             getOwner(this)
                 // And we call 'lookup' passing the container key so we get the object stored under that key
                 // and making it available in the template.
-                .lookup('data:location'))    
+                .lookup('data:location'));   
     }
 });
