@@ -32,5 +32,10 @@ export default Route.extend(ApplicationRouteMixin, {
                 // And we call 'lookup' passing the container key so we get the object stored under that key
                 // and making it available in the template.
                 .lookup('data:location'));   
+
+        // Adding the user agent to our controller
+        let requestObj = getOwner(this)
+            .lookup('data:request');
+        controller.set('req', requestObj);
     }
 });
