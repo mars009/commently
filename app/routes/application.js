@@ -7,6 +7,8 @@ const { Route, inject, getOwner } = Ember;
 
 export default Route.extend(ApplicationRouteMixin, {
     session: inject.service(),
+    // Inject the current-user service so we can retrieve the current logged in user
+    currentUser: inject.service(),
     actions: {
         logout() {
             this.get('session').invalidate();
@@ -16,6 +18,8 @@ export default Route.extend(ApplicationRouteMixin, {
         // Always do this._super(...arguments)
         this._super(...arguments);
         console.log(math, PI);
+        // Load the current user information
+        return this.get('currentUser').loadUserInfo();
     },
 
     // setupController hook
