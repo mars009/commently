@@ -4,6 +4,14 @@
       <input
         class='posts-search-field'
         type='search'
+        value={{search}}
+        {{!-- 'action' in combination with 'mut' lets you set a value.
+        The value of the action-helper lets you pluck pieces of the event object
+        so in this case the input's value
+        onInput={{action (mut search) value="target.value"}}
+        
+        NOTE: However, here we use the old style of action and not use the {{input}} --}}
+        onInput={{action 'searchUpdated'}}
         placeholder='🔎 Search'/>
     </div>
     <div class="posts-left-content">

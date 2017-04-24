@@ -12,6 +12,6 @@ export default Ember.Service.extend({
     // NOTE: We are taking advantage of the fact that Ember.Data can fetch the current user
     // because the URL pattern comforms to the same way we retrieve /user/1 or /user/current
     return this.get('store').peekRecord('user', 'current') 
-     || this.get('strore').findRecord('user', 'current');
+     || this.get('store').findRecord('user', 'current');
   }
 });
